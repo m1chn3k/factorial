@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactorialApp", "FactorialApp\FactorialApp.csproj", "{D0B4F2A3-F44D-4719-A8C5-42C919EC25B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactorialApp.Tests", "FactorialApp.Tests\FactorialApp.Tests.csproj", "{2BE7A551-155F-4C84-95D7-2242827C7852}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0B4F2A3-F44D-4719-A8C5-42C919EC25B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0B4F2A3-F44D-4719-A8C5-42C919EC25B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0B4F2A3-F44D-4719-A8C5-42C919EC25B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0B4F2A3-F44D-4719-A8C5-42C919EC25B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BE7A551-155F-4C84-95D7-2242827C7852}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BE7A551-155F-4C84-95D7-2242827C7852}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BE7A551-155F-4C84-95D7-2242827C7852}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BE7A551-155F-4C84-95D7-2242827C7852}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
