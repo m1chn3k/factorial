@@ -28,7 +28,7 @@ jobs:
       - name: Push Docker image
         run: docker push ghcr.io/${{ github.repository_owner }}/factorial-app:${{ github.sha }}
 
-    test:
+  test:
     runs-on: ubuntu-latest
     needs: build-and-push
     steps:
@@ -43,5 +43,9 @@ jobs:
         run: docker pull ghcr.io/${{ github.repository_owner }}/factorial-app:${{ github.sha }}
 
       - name: Run tests inside docker container
-        run: docker run --rm --entrypoint "" ghcr.io/${{ github.repository_owner }}/factorial-app:${{ github.sha }} dotnet test /app/FactorialApp.Tests/FactorialApp.Tests.csproj --no-build --verbosity normal
+        run: |
+          docker run --rm \
+            --entrypoint "" \
+            ghcr.io/${{ github.repository_owner }}/factorial-app:${{ github.sha }} \
+            dotnet test /app/FactorialApp.Tests/FactorialApp.Tests.csproj --no-build --verbosity normal
 
