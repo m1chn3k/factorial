@@ -1,10 +1,20 @@
+name: .NET Build and Test
+
+on:
+  push:
+    branches:
+      - lab2-docker
+  pull_request:
+    branches:
+      - lab2-docker
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Set up .NET SDK
       uses: actions/setup-dotnet@v4
@@ -12,7 +22,7 @@ jobs:
         dotnet-version: '7.0.x'
 
     - name: Verify .NET version
-      run: dotnet --version 
+      run: dotnet --version
 
     - name: Restore dependencies
       run: dotnet restore
