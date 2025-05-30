@@ -42,5 +42,6 @@ jobs:
       - name: Pull Docker image
         run: docker pull ghcr.io/${{ github.repository_owner }}/factorial-app:${{ github.sha }}
 
-      - name: Run tests inside container
-        run: docker run --rm ghcr.io/${{ github.repository_owner }}/factorial-app:${{ github.sha }} dotnet test /app/FactorialApp.Tests/FactorialApp.Tests.csproj --no-build --verbosity normal
+     - name: Run tests inside docker container
+  run: docker run --rm --entrypoint "" ghcr.io/m1chn3k/factorial-app:latest dotnet test /app/FactorialApp.Tests/FactorialApp.Tests.csproj --no-build --verbosity normal
+
