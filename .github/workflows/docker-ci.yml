@@ -23,10 +23,10 @@ jobs:
           password: ${{ secrets.GHCR_TOKEN }}
 
       - name: Build Docker image
-        run: docker build -t ghcr.io/${{ github.repository_owner }}/factorial-app:${{ github.sha }} .
+        run: docker build -t ghcr.io/${{ github.repository_owner }}/factorial-app:latest .
 
       - name: Push Docker image
-        run: docker push ghcr.io/${{ github.repository_owner }}/factorial-app:${{ github.sha }}
+        run: docker push ghcr.io/${{ github.repository_owner }}/factorial-app:latest
 
   test:
     runs-on: ubuntu-latest
@@ -40,12 +40,7 @@ jobs:
           password: ${{ secrets.GHCR_TOKEN }}
 
       - name: Pull Docker image
-        run: docker pull ghcr.io/${{ github.repository_owner }}/factorial-app:${{ github.sha }}
+        run: docker pull ghcr.io/${{ github.repository_owner }}/factorial-app:latest
 
       - name: Run tests inside docker container
-        run: |
-          docker run --rm \
-            --entrypoint "" \
-            ghcr.io/${{ github.repository_owner }}/factorial-app:${{ github.sha }} \
-            dotnet test /app/FactorialApp.Tests/FactorialApp.Tests.csproj --no-build --verbosity normal
-
+        run: docker run --rm ghcr.io/${{ github.repository_owner }}/factorial-app:latest dotnet test /app/FactorialApp.Tests/FactorialApp.Tests.csproj --no-build --verbosity normal
