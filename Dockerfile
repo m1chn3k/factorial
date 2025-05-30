@@ -9,10 +9,8 @@ RUN dotnet restore
 COPY FactorialApp/. ./FactorialApp/
 COPY FactorialApp.Tests/. ./FactorialApp.Tests/
 
-# Збираємо проєкт і тести
-RUN dotnet build FactorialApp.sln --configuration Release
+RUN dotnet test FactorialApp.Tests/FactorialApp.Tests.csproj --no-restore --verbosity normal
 
-# Для запуску додатку
 RUN dotnet publish FactorialApp/FactorialApp.csproj -c Release -o out
 
 FROM mcr.microsoft.com/dotnet/aspnet:7.0
